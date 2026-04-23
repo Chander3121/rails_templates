@@ -14,7 +14,12 @@ Rails.application.routes.draw do
   # root "posts#index"
   namespace :api do
     namespace :v1 do
+      # Auth routes
       post "login", to: "auth#login"
+      post "refresh", to: "auth#refresh"
+      post "logout", to: "auth#logout"
+
+
       get "me", to: "base#me"
     end
   end

@@ -10,4 +10,8 @@ module Authenticatable
   rescue
     nil
   end
+
+  def authenticate_request
+    unauthorized! unless current_user
+  end
 end
